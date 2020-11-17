@@ -41,14 +41,20 @@ print(m)
 
 
 # Visualising the Train and test set results
+def plot():
+    """
+    This function plots the graph.
+    :return: None
+    """
+    plt.scatter(X_Train, Y_Train, color = 'black')
+    plt.plot(X_Train, regressor.predict(X_Train), color = 'blue', label = "training")
+    plt.scatter(X_Test, Y_Test, color = 'green')
+    plt.plot(X_Train, regressor.predict(X_Train), color = 'red', label = "testing")
+    plt.title('Salary vs Experience  (Training Set)')
+    plt.xlabel('Years')
+    plt.ylabel('Salary')
+    plt.legend()
+    plt.show()
 
-plt.scatter(X_Train, Y_Train, color = 'black')
-plt.plot(X_Train, regressor.predict(X_Train), color = 'blue', label = "training")
-plt.scatter(X_Test, Y_Test, color = 'green')
-plt.plot(X_Train, regressor.predict(X_Train), color = 'red', label = "testing")
-plt.title('Salary vs Experience  (Training Set)')
-plt.xlabel('Years')
-plt.ylabel('Salary')
-plt.legend()
-plt.show()
+plot()
 
