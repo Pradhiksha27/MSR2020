@@ -7,9 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1jOWzsg6lHSaVja6LvyDP8UT3h2kb3K21
 """
 
-from google.colab import drive
-drive.mount("/content/gdrive")
-
 # Simple Linear Regression
 
 import numpy as np
@@ -43,23 +40,21 @@ m=mean_absolute_error(Y_Pred, Y_Test)
 print(m)
 
 
-# Visualising the Training set results
+# Visualising the Train and test set results
+def plot():
+    """
+    This function plots the graph.
+    :return: None
+    """
+    plt.scatter(X_Train, Y_Train, color = 'black')
+    plt.plot(X_Train, regressor.predict(X_Train), color = 'blue', label = "training")
+    plt.scatter(X_Test, Y_Test, color = 'green')
+    plt.plot(X_Train, regressor.predict(X_Train), color = 'red', label = "testing")
+    plt.title('Salary vs Experience  (Training Set)')
+    plt.xlabel('Years')
+    plt.ylabel('Salary')
+    plt.legend()
+    plt.show()
 
-plt.scatter(X_Train, Y_Train, color = 'black')
-plt.plot(X_Train, regressor.predict(X_Train), color = 'blue', label = "training")
-plt.scatter(X_Test, Y_Test, color = 'green')
-plt.plot(X_Train, regressor.predict(X_Train), color = 'red', label = "testing")
-plt.title('Salary vs Experience  (Training Set)')
-plt.xlabel('Years')
-plt.ylabel('Salary')
-plt.legend()
-plt.show()
+plot()
 
-# Visualising the Test set results
-
-#plt.scatter(X_Test, Y_Test, color = 'black')
-#plt.plot(X_Train, regressor.predict(X_Train), color = 'blue')
-#plt.title('Salary vs Experience  (Training Set)')
-#plt.xlabel('Years')
-#plt.ylabel('Salary')
-#plt.show()
