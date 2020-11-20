@@ -12,6 +12,12 @@ def clean_data(X):
         X_cleaned.append([i[0], i[1], i[2].timestamp(), i[3], i[4].timestamp(), i[5]])
     return X_cleaned
 
+def clean_labels(Y):
+    Y_cleaned = []
+    for i in range(Y.shape[0]):
+        # print(Y.iloc[i][0])
+        Y_cleaned.append([Y.iloc[i][0].total_seconds()])
+    return Y_cleaned
 
 def split_train_test(X, Y, ratio=0.3):
     """
@@ -63,15 +69,16 @@ def get_error(Y_pred, Y_test):
 
 
 # Visualising the Train and test set results
-def plot(X, Y, Y_predicted, X_label, Y_label, title):
+def plot(X, Y, Y_predicted, Y_average, X_label, Y_label, title):
     """
     This function plots the graph
 
     :return: None
     """
     # print(X.shape, Y.shape, Y_predicted.shape)
-    plt.scatter(X, Y, color = 'black', label="actual value")
-    plt.scatter(X, Y_predicted, color = 'blue', label = "predicted value")
+    plt.scatter(X, Y, color = 'black', label="Actual value")
+    plt.scatter(X, Y_predicted, color = 'blue', label = "Regressor predicted value")
+    plt.scatter ( X, Y_average, color = 'red', label = "Baseline average value")
     # plt.scatter(X_Test, Y_Test, color = 'green')
     # plt.plot(X_Train, regressor.predict(X_Train), color = 'red', label = "testing")
     plt.title(title)

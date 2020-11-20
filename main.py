@@ -28,14 +28,12 @@ if __name__ == '__main__':
                                                    'num_revision', 'last_revision', 'num_releases'])
     Y = pd.DataFrame.from_records(Y_list, columns = ['lifespan'])
 
-    print(X.shape, Y.shape)
     X = X.values
-    Y = Y.values
 
     X = clean_data(X)
     X = np.array(X)
-    Y = Y.astype('float64')
-
+    Y = clean_labels(Y)
+    Y = np.divide(Y, 86400) # convert to days
     X_train, X_test, Y_train, Y_test = split_train_test(X, Y)
     model = regression_model_fit(X_train, Y_train)
     avg_value = np.average(Y_train)
@@ -48,13 +46,13 @@ if __name__ == '__main__':
     random_error = get_error(Y_average, Y_test)
     print("Error by regression: ", regression_error)
     print("Error by average: ", random_error)
-    plot(X_test[:, 0], Y_test, Y_predict, "snapshot count", "Lifespan", "Predict Lifespan")
+    plot(X_test[:, 0], Y_test, Y_predict, Y_average, "snapshot count", "Lifespan (in days)", "Predict Lifespan from snapshot count")
 
-    plot(X_test[:, 1], Y_test, Y_predict, "total targets", "Lifespan", "Predict Lifespan" )
-    plot(X_test[:, 2], Y_test, Y_predict, "original date", "Lifespan", "Predict Lifespan")
-    plot(X_test[:, 3], Y_test, Y_predict, "revision count", "Lifespan", "Predict Lifespan")
-    plot(X_test[:, 4], Y_test, Y_predict, "last revision", "Lifespan", "Predict Lifespan")
-    plot(X_test[:, 5], Y_test, Y_predict, "releases count", "Lifespan", "Predict Lifespan")
+    plot(X_test[:, 1], Y_test, Y_predict, Y_average, "total targets", "Lifespan (in days)", "Predict Lifespan from number of targets")
+    plot(X_test[:, 2], Y_test, Y_predict, Y_average, "original date", "Lifespan (in days)", "Predict Lifespan from original date")
+    plot(X_test[:, 3], Y_test, Y_predict, Y_average, "revision count", "Lifespan (in days)", "Predict Lifespan from number of revisions")
+    plot(X_test[:, 4], Y_test, Y_predict, Y_average, "last revision", "Lifespan (in days)", "Predict Lifespan from last revision date")
+    plot(X_test[:, 5], Y_test, Y_predict, Y_average, "releases count", "Lifespan (in days)", "Predict Lifespan from number of releases")
 
 
 
