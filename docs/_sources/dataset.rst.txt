@@ -1,6 +1,12 @@
 Dataset
 =======
-This dataset is provided as part of the MSR 2020 challenge.
+The dataset is provided as part of the MSR 2020 challenge.
+The full version spans more than 5 billion unique source code files and 1 billion unique commits, 
+coming from more than 80 million software projects. Contents come from GitHub and GitLab, FOSS distributions 
+like Debian, and language-specific package managers like PyPI.
+The data is stored in a uniform representation: A Merkle DAG linking source code
+files in directories, evolution of commits and snapshots of
+the VCS.
 
 Complete Dataset
 ----------------
