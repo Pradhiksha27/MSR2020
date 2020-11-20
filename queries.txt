@@ -1,0 +1,8 @@
+Query:
+"SELECT column_name from INFORMATION_SCHEMA.columns where table_name = 'final_table3'"
+
+Columns:
+[('id',), ('snapshot_count',), ('total_targets',), ('original_date',),
+('num_revision',), ('last_revision',), ('lifespan',), ('num_releases',)]
+
+Query:
