@@ -1,5 +1,10 @@
 Model
 =====
+High Level Design
+-----------------
+.. image:: images/10.PNG
+As for a high level idea, we start off by preprocessing our data, which includes sampling, labelling, cleaning and splitting it into train and test data. We the use a linear regression approach to model our dataset and get the output. This is further evaluated by metrics such as Mean Absolute Error as explained below.
+
 Linear Regression
 -----------------
 Linear regression is a linear approach to modelling the relationship between a scalar response and one or more explanatory variables. The case of one explanatory variable is called simple linear regression.
@@ -12,4 +17,4 @@ Evaluation
 ----------
 Since we are attempting to perform regression which outputs continuous value within a given range. Our main goal is to minimize the error which is defined by the Loss Function.
 
-We have used Mean Squared Error(MSE) as a metric to evaluate the results of the prediction. MSE is the sum of squared distances between our target variable and predicted values.
+We have used Mean Absolute Error (MAE) as a metric to evaluate the results of the prediction. MAE is the sum of absolute distances between our target variable and predicted values.
