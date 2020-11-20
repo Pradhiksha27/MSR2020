@@ -6,8 +6,14 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
+def clean_data(X):
+    X_cleaned = []
+    for i in X:
+        X_cleaned.append([i[0], i[1], i[2].timestamp(), i[3], i[4].timestamp(), i[5]])
+    return X_cleaned
 
-def train_test_split(X, Y, ratio=0.3):
+
+def split_train_test(X, Y, ratio=0.3):
     """
     This function is used to split the dataset into training and testing dataset
 
@@ -63,8 +69,9 @@ def plot(X, Y, Y_predicted, X_label, Y_label, title):
 
     :return: None
     """
-    plt.scatter(X, Y, color = 'black')
-    plt.plot(X, Y_predicted, color = 'blue', label = "predicted value")
+    # print(X.shape, Y.shape, Y_predicted.shape)
+    plt.scatter(X, Y, color = 'black', label="actual value")
+    plt.scatter(X, Y_predicted, color = 'blue', label = "predicted value")
     # plt.scatter(X_Test, Y_Test, color = 'green')
     # plt.plot(X_Train, regressor.predict(X_Train), color = 'red', label = "testing")
     plt.title(title)
