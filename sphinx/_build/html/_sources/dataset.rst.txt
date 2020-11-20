@@ -3,7 +3,7 @@ Dataset
 This dataset is provided as part of the MSR 2020 challenge.
 
 Complete Dataset
----------
+----------------
 The Software Heritage Graph Dataset contains a table representation of the full Software Heritage Graph. It is available in the following formats:
 
 #. PostgreSQL (compressed):
@@ -21,11 +21,11 @@ The Software Heritage Graph Dataset contains a table representation of the full 
 	* S3: :ref:`s3://softwareheritage/graph`
 
 Teaser Dataset
----------
+--------------
 The above dataset is too big, so following 'teaser' dataset is mainly used for training and testing purposes in our implementation.
 
 popular-4k
----------
+----------
 The popular-4k teaser contains a subset of 4000 popular repositories from GitHub, Gitlab, PyPI and Debian. The selection criteria to pick the software origins was the following:
 * The 1000 most popular GitHub projects (by number of stars)
 * The 1000 most popular Gitlab projects (by number of stars)
@@ -40,7 +40,7 @@ The teaser has the following configurations:
 	* URL: /graph/latest/popular-4k/sql/
 
 popular-3k
---------
+----------
 The popular-3k-python teaser contains a subset of 3052 popular repositories tagged as being written in the Python language, from GitHub, Gitlab, PyPI and Debian. The selection criteria to pick the software origins was the following, similar to popular-4k:
 * the 1000 most popular GitHub projects written in Python (by number of stars),
 * the 131 Gitlab projects written in Python that have 2 stars or more,
@@ -55,7 +55,7 @@ The teaser has the following configurations:
 	* URL: /graph/latest/popular-3k-python/sql/
 
 Relational Schema 
-------------
+-----------------
 The Merkle DAG of the Software Heritage archive is encoded in the dataset as a set of relational tables. A simplified view of the corresponding database schema is shown here:
 
 .. image:: images/8.png
