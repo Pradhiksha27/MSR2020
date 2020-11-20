@@ -155,13 +155,108 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-test">
-<span id="code-documentation"></span><h1>Code Documentation<a class="headerlink" href="#module-test" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-config">
+<span id="code-documentation"></span><h1>Code Documentation<a class="headerlink" href="#module-config" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="test.test">
-<code class="sig-prename descclassname">test.</code><code class="sig-name descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.test" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is meant only for testing
-:return: None</p>
+<dt id="config.config">
+<code class="sig-prename descclassname">config.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'database.ini'</span></em>, <em class="sig-param"><span class="n">section</span><span class="o">=</span><span class="default_value">'postgresql'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-regression_model"></span><dl class="py function">
+<dt id="regression_model.get_error">
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">get_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Y_pred</span></em>, <em class="sig-param"><span class="n">Y_test</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.get_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is get the mean absolute error between the predicted label
+and the actual label</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Y_pred</strong> – The predicted labels from the regression model</p></li>
+<li><p><strong>Y_test</strong> – The actual labels from the dataset</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The mean absolute error value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="regression_model.plot">
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">Y_predicted</span></em>, <em class="sig-param"><span class="n">X_label</span></em>, <em class="sig-param"><span class="n">Y_label</span></em>, <em class="sig-param"><span class="n">title</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function plots the graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="regression_model.regression_model_fit">
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">regression_model_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.regression_model_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to fit the provided model with the training dataset provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – the feature set of the datapoints for regression prediction</p></li>
+<li><p><strong>Y</strong> – the labels of the datapoints</p></li>
+<li><p><strong>model</strong> – The regression model to be used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the fitted regression model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="regression_model.regression_model_predict">
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">regression_model_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.regression_model_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to predict the labels for the test dataset provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – The feature set for which the prediction is to be made</p></li>
+<li><p><strong>model</strong> – The regression model used for the result</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Y labels predicted by the model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="regression_model.train_test_split">
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">train_test_split</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">ratio</span><span class="o">=</span><span class="default_value">0.3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.train_test_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to split the dataset into training and testing dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – the feature set of the datapoints for regression prediction</p></li>
+<li><p><strong>Y</strong> – the labels of the datapoints</p></li>
+<li><p><strong>ratio</strong> – the test dataset ratio</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the training and testing datasets</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-get_stats"></span><dl class="py function">
+<dt id="get_stats.get_stats">
+<code class="sig-prename descclassname">get_stats.</code><code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get_stats.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to print the statistics of the resultant
+list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>result</strong> – The list of result from the database</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
