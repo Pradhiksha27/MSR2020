@@ -1,4 +1,4 @@
-# MSR-project
+# Welcome to MSR Project
 
 The International Conference on Mining Software Repositories (MSR) has hosted the mining challenge every year, since 2006. With this challenge, they aim at everyone interested to apply their tools to a common dataset. The challenge is for researchers and practitioners to use their mining tools and approaches on a dare. The goal is to answer questions about a given dataset, that were previously unanswered.
 
