@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Model" href="model.html" />
-    <link rel="prev" title="Dataset" href="dataset.html" /> 
+    <link rel="prev" title="Quick Start" href="pre_req.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,6 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="problem.html">Problem Statement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre_req.html">Quick Start</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Queries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Documentation</a></li>
@@ -162,19 +163,126 @@
 <ul class="simple">
 <li><p>Create final informative table by joining various tables:</p></li>
 </ul>
-<p>TODO</p>
+<p>CREATE TABLE final_table3
+AS
+SELECT</p>
+<blockquote>
+<div><p>o.id as id,
+count(snap.object_id) as snapshot_count,
+count(snap.target) as total_targets,
+ov.date as original_date,
+count(snap.revisions) as num_revision,
+max(snap.latest_revision) as last_revision,
+count(snap.num_releases) as num_releases,</p>
+</div></blockquote>
+<dl>
+<dt>FROM</dt><dd><p>origin o
+JOIN
+origin_visit ov
+ON
+o.is = ov.origin
+JOIN
+(</p>
+<blockquote>
+<div><dl>
+<dt>SELECT</dt><dd><p>snapshot.object_id as object_id,
+count(snaptarget.revisions) as num_revision,
+count(snaptarget.num_releases) as num_releases,
+max(snaptarget.latest_revision) as latest_revision,
+count(snaptarget.target) as total_targets</p>
+</dd>
+<dt>FROM</dt><dd><p>snapshot s
+JOIN
+snapshot_branches snapbranch
+ON
+s.object_id = snapbranch.snapshot_id
+JOIN
+(    SELECT</p>
+<blockquote>
+<div><blockquote>
+<div><p>sbranch.object_id as object_id,
+count(rev.revisions) as num_revision,
+count(rev.num_releases) as num_releases,
+max(rev.latest_revision) as latest_revision,
+count(sbranch.target) as total_targets</p>
+</div></blockquote>
+<dl>
+<dt>FROM</dt><dd><p>snapshot_branch sbranch
+JOIN
+(</p>
+<blockquote>
+<div><dl class="simple">
+<dt>SELECT</dt><dd><p>count(id) as num_releases,
+r.id as revisions,
+max(r.date) as latest_revision</p>
+</dd>
+<dt>FROM</dt><dd><p>release rel
+JOIN
+revision r
+ON
+rel.target = r.id</p>
+</dd>
+<dt>GROUP BY</dt><dd><p>r.id</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>) AS rev</p>
+</dd>
+<dt>ON</dt><dd><p>sbranch.target = rev.id</p>
+</dd>
+<dt>GROUP BY</dt><dd><p>sbranch.object_id</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>) AS snaptarget
+ON
+snaptarget.object_id = snapbranch.branch_id</p>
+</dd>
+<dt>GROUP BY</dt><dd><p>snapshot.object_id</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>) AS snap
+ON
+ov.snapshot_id = snap.object_id</p>
+</dd>
+<dt>GROUP BY</dt><dd><p>o.id;</p>
+</dd>
+</dl>
 <ul class="simple">
 <li><p>Fetch the column name in the final table created:</p></li>
 </ul>
-<p><cite>SELECT column_name from INFORMATION_SCHEMA.columns where table_name = ‘final_table3’</cite></p>
+<dl class="simple">
+<dt>SELECT</dt><dd><p>column_name</p>
+</dd>
+<dt>FROM</dt><dd><p>INFORMATION_SCHEMA.columns</p>
+</dd>
+<dt>WHERE</dt><dd><p>table_name = ‘final_table3’</p>
+</dd>
+</dl>
 <ul class="simple">
 <li><p>Fetching the features for datapoints:</p></li>
 </ul>
-<p><cite>SELECT snapshot_count, total_targets, original_date, num_revision, last_revision, num_releases FROM final_table3</cite></p>
+<dl class="simple">
+<dt>SELECT</dt><dd><p>snapshot_count,
+total_targets,
+original_date,
+num_revision,
+last_revision,
+num_releases</p>
+</dd>
+<dt>FROM</dt><dd><p>final_table3</p>
+</dd>
+</dl>
 <ul class="simple">
 <li><p>Fetching the labels (lifespan) for the datapoints:</p></li>
 </ul>
-<p><cite>SELECT lifespan from final_table3</cite></p>
+<dl class="simple">
+<dt>SELECT</dt><dd><p>lifespan</p>
+</dd>
+<dt>FROM</dt><dd><p>final_table3</p>
+</dd>
+</dl>
 </div>
 
 
@@ -188,7 +296,7 @@
         <a href="model.html" class="btn btn-neutral float-right" title="Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dataset.html" class="btn btn-neutral float-left" title="Dataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pre_req.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
