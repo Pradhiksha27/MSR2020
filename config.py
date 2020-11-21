@@ -3,6 +3,12 @@ from configparser import ConfigParser
 
 def config(filename='database.ini', section='postgresql'):
     """
+    This function is used to pick the configuration from the section
+    in the provided file
+
+    :param filename: The path of the file which contains the configurations
+    :param section: The section inside the file which contains the configuration needed to connect to the database
+    :return: the database config needed to connect
 
     """
     # create a parser
