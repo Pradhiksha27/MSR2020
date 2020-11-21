@@ -88,7 +88,13 @@
 <li class="toctree-l1"><a class="reference internal" href="problem.html">Problem Statement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pre_req.html">Quick Start</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Queries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-final-informative-table">Create final informative table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetch-the-column-name-in-the-final-table">Fetch the column name in the final table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetching-the-features-for-datapoints">Fetching the features for datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetching-the-labels-lifespan-for-the-datapoints">Fetching the labels (lifespan) for the datapoints</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
@@ -160,9 +166,9 @@
   <div class="section" id="queries">
 <h1>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">¶</a></h1>
 <p>The following queries were used for:</p>
-<ul class="simple">
-<li><p>Create final informative table by joining various tables:</p></li>
-</ul>
+<div class="section" id="create-final-informative-table">
+<h2>Create final informative table<a class="headerlink" href="#create-final-informative-table" title="Permalink to this headline">¶</a></h2>
+<p>Query:</p>
 <p>CREATE TABLE final_table3
 AS
 SELECT</p>
@@ -249,9 +255,10 @@ ov.snapshot_id = snap.object_id</p>
 <dt>GROUP BY</dt><dd><p>o.id;</p>
 </dd>
 </dl>
-<ul class="simple">
-<li><p>Fetch the column name in the final table created:</p></li>
-</ul>
+</div>
+<div class="section" id="fetch-the-column-name-in-the-final-table">
+<h2>Fetch the column name in the final table<a class="headerlink" href="#fetch-the-column-name-in-the-final-table" title="Permalink to this headline">¶</a></h2>
+<p>Query:</p>
 <dl class="simple">
 <dt>SELECT</dt><dd><p>column_name</p>
 </dd>
@@ -260,9 +267,10 @@ ov.snapshot_id = snap.object_id</p>
 <dt>WHERE</dt><dd><p>table_name = ‘final_table3’</p>
 </dd>
 </dl>
-<ul class="simple">
-<li><p>Fetching the features for datapoints:</p></li>
-</ul>
+</div>
+<div class="section" id="fetching-the-features-for-datapoints">
+<h2>Fetching the features for datapoints<a class="headerlink" href="#fetching-the-features-for-datapoints" title="Permalink to this headline">¶</a></h2>
+<p>Query:</p>
 <dl class="simple">
 <dt>SELECT</dt><dd><p>snapshot_count,
 total_targets,
@@ -274,15 +282,17 @@ num_releases</p>
 <dt>FROM</dt><dd><p>final_table3</p>
 </dd>
 </dl>
-<ul class="simple">
-<li><p>Fetching the labels (lifespan) for the datapoints:</p></li>
-</ul>
+</div>
+<div class="section" id="fetching-the-labels-lifespan-for-the-datapoints">
+<h2>Fetching the labels (lifespan) for the datapoints<a class="headerlink" href="#fetching-the-labels-lifespan-for-the-datapoints" title="Permalink to this headline">¶</a></h2>
+<p>Query:</p>
 <dl class="simple">
 <dt>SELECT</dt><dd><p>lifespan</p>
 </dd>
 <dt>FROM</dt><dd><p>final_table3</p>
 </dd>
 </dl>
+</div>
 </div>
 
 

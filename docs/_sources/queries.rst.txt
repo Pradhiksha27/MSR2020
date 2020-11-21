@@ -3,9 +3,12 @@ Queries
 The following queries were used for:
 
 
+Create final informative table
+------------------------------
+
 .. highlight:: none
 
-* Create final informative table by joining various tables:: 
+Query:: 
 
 CREATE TABLE final_table3 
 AS
@@ -77,10 +80,12 @@ GROUP BY
     o.id;
  
 
+Fetch the column name in the final table
+----------------------------------------
 
 .. highlight:: none
 
-* Fetch the column name in the final table created::
+Query::
 
 SELECT
     column_name
@@ -90,9 +95,12 @@ WHERE
     table_name = 'final_table3'
 
 
+Fetching the features for datapoints
+------------------------------------
+
 .. highlight:: none
 
-* Fetching the features for datapoints::
+Query::
 
 SELECT
     snapshot_count,
@@ -105,9 +113,12 @@ FROM
     final_table3
 
 
+Fetching the labels (lifespan) for the datapoints
+-------------------------------------------------
+
 .. highlight:: none
 
-* Fetching the labels (lifespan) for the datapoints::
+Query::
 
 SELECT
     lifespan
