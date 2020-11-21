@@ -1,9 +1,12 @@
 Results
 =======
-These were the results we obtained.
+We take the average lifespan of a repository as our baseline for this project. 
+Using this baseline, We have evaluated the model using the MAE metric. 
 
-.. image:: images/1.png
-  :width: 500
+Error by Baseline: 348.8 (~349 days)
+------------------------------------
+Error by our model: 288.7 (~289 days) 
+-------------------------------------
 
 .. image:: images/2.png
   :width: 500

@@ -18,3 +18,18 @@ Evaluation
 Since we are attempting to perform regression which outputs continuous value within a given range. Our main goal is to minimize the error which is defined by the Loss Function.
 
 We have used Mean Absolute Error (MAE) as a metric to evaluate the results of the prediction. MAE is the sum of absolute distances between our target variable and predicted values.
+
+Mathematically, it can be expressed as follows:
+
+.. math::
+
+   \frac{ \sum_{i=1}^{N}|y_i - x_i| }{N}
+
+where
+:math:`y_i`
+is the predicted value from the regression model, 
+:math:`x_i` 
+is the true value of the datapoint and
+N is the number of datapoints.
+
+
