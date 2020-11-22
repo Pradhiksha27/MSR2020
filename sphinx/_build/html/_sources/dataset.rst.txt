@@ -204,3 +204,5 @@ The following are details of the schema:
 
 	* snapshot_id (integer): the integer identifier of the snapshot archived in this visit.
 
+
+

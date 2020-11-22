@@ -26,17 +26,18 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="References" href="references.html" />
     <link rel="prev" title="Code Documentation" href="code.html" /> 
 </head>
 
@@ -95,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#error-by-our-model-288-7-289-days">Error by our model: 288.7 (~289 days)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
             
@@ -162,13 +164,14 @@
             
   <div class="section" id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
-<p>We take the average lifespan of a repository as our baseline for this project.
-Using this baseline, We have evaluated the model using the MAE metric.</p>
+<p>Regression is a statistical method to determine the relationship of one variable dependent on others. For our project, We take the average lifespan of a repository as our baseline. Using this baseline, We have evaluated the model using the MAE metric. Our model has performed better than the baseline as shown below.</p>
 <div class="section" id="error-by-baseline-348-8-349-days">
 <h2>Error by Baseline: 348.8 (~349 days)<a class="headerlink" href="#error-by-baseline-348-8-349-days" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="error-by-our-model-288-7-289-days">
 <h2>Error by our model: 288.7 (~289 days)<a class="headerlink" href="#error-by-our-model-288-7-289-days" title="Permalink to this headline">¶</a></h2>
+<p>We have plotted graphs comparing the lifespan to the various features such as total number of snapshot counts, number of targets, original date, number of revisions, number of releases and last revision date. Each diagram shows three scatter plots : The actual value obtained from the table, the value predicted by the model and the average lifespan value which is our baseline.</p>
+<p>According to our graphs, We infer that the lifespan feature does heavily depend on the values of the other features as well. Even though the number of snapshots are the same, the lifespan values differ showing that the snapshot count does matter.</p>
 <a class="reference internal image-reference" href="_images/2.png"><img alt="_images/2.png" src="_images/2.png" style="width: 500px;" /></a>
 <a class="reference internal image-reference" href="_images/3.png"><img alt="_images/3.png" src="_images/3.png" style="width: 500px;" /></a>
 <a class="reference internal image-reference" href="_images/4.png"><img alt="_images/4.png" src="_images/4.png" style="width: 500px;" /></a>
@@ -185,6 +188,8 @@ Using this baseline, We have evaluated the model using the MAE metric.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="code.html" class="btn btn-neutral float-left" title="Code Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
