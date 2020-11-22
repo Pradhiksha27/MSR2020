@@ -17,7 +17,7 @@ Evaluation
 ----------
 Since we are attempting to perform regression which outputs continuous value within a given range. Our main goal is to minimize the error which is defined by the Loss Function.
 
-We have used Mean Absolute Error (MAE) as a metric to evaluate the results of the prediction. MAE is the sum of absolute distances between our target variable and predicted values.
+We have chosen average lifespan as our baseline. We compare our other features with this baseline by plotting graphs and using Mean Absolute Error (MAE) as a metric to evaluate the results of the prediction. MAE is the sum of absolute distances between our target variable and predicted values.
 
 Mathematically, it can be expressed as follows:
 

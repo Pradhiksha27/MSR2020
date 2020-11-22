@@ -26,11 +26,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -92,6 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
             
@@ -159,9 +160,9 @@
             
   <div class="section" id="module-config">
 <span id="code-documentation"></span><h1>Code Documentation<a class="headerlink" href="#module-config" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="config.config">
-<code class="sig-prename descclassname">config.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param">filename='database.ini'</em>, <em class="sig-param">section='postgresql'</em><span class="sig-paren">)</span><a class="headerlink" href="#config.config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">config.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'database.ini'</span></em>, <em class="sig-param"><span class="n">section</span><span class="o">=</span><span class="default_value">'postgresql'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to pick the configuration from the section
 in the provided file</p>
 <dl class="field-list simple">
@@ -177,9 +178,9 @@ in the provided file</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-connect_database"></span><dl class="function">
+<span class="target" id="module-connect_database"></span><dl class="py function">
 <dt id="connect_database.connect_and_fetch_data">
-<code class="sig-prename descclassname">connect_database.</code><code class="sig-name descname">connect_and_fetch_data</code><span class="sig-paren">(</span><em class="sig-param">query</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="headerlink" href="#connect_database.connect_and_fetch_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">connect_database.</code><code class="sig-name descname">connect_and_fetch_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#connect_database.connect_and_fetch_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to connect to the database and fetch the rows
 from the database, given the query and config params of the database.</p>
 <dl class="field-list simple">
@@ -195,9 +196,9 @@ from the database, given the query and config params of the database.</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-data_pre_processing"></span><dl class="function">
+<span class="target" id="module-data_pre_processing"></span><dl class="py function">
 <dt id="data_pre_processing.clean_data">
-<code class="sig-prename descclassname">data_pre_processing.</code><code class="sig-name descname">clean_data</code><span class="sig-paren">(</span><em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#data_pre_processing.clean_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">data_pre_processing.</code><code class="sig-name descname">clean_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_pre_processing.clean_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to clean the data in the dataset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -209,9 +210,9 @@ from the database, given the query and config params of the database.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="data_pre_processing.clean_labels">
-<code class="sig-prename descclassname">data_pre_processing.</code><code class="sig-name descname">clean_labels</code><span class="sig-paren">(</span><em class="sig-param">Y</em><span class="sig-paren">)</span><a class="headerlink" href="#data_pre_processing.clean_labels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">data_pre_processing.</code><code class="sig-name descname">clean_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_pre_processing.clean_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to clean the labels in the dataset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -223,9 +224,9 @@ from the database, given the query and config params of the database.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="data_pre_processing.split_train_test">
-<code class="sig-prename descclassname">data_pre_processing.</code><code class="sig-name descname">split_train_test</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">Y</em>, <em class="sig-param">ratio=0.3</em><span class="sig-paren">)</span><a class="headerlink" href="#data_pre_processing.split_train_test" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">data_pre_processing.</code><code class="sig-name descname">split_train_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">ratio</span><span class="o">=</span><span class="default_value">0.3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_pre_processing.split_train_test" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to split the dataset into training and testing dataset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -241,9 +242,9 @@ from the database, given the query and config params of the database.</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-regression_model"></span><dl class="function">
+<span class="target" id="module-regression_model"></span><dl class="py function">
 <dt id="regression_model.regression_model_fit">
-<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">regression_model_fit</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">Y</em>, <em class="sig-param">model=LinearRegression()</em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.regression_model_fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">regression_model_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.regression_model_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to fit the provided model with the training dataset provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -259,9 +260,9 @@ from the database, given the query and config params of the database.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="regression_model.regression_model_predict">
-<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">regression_model_predict</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">model</em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.regression_model_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">regression_model.</code><code class="sig-name descname">regression_model_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#regression_model.regression_model_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to predict the labels for the test dataset provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -276,9 +277,9 @@ from the database, given the query and config params of the database.</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-error_analysis"></span><dl class="function">
+<span class="target" id="module-error_analysis"></span><dl class="py function">
 <dt id="error_analysis.get_error">
-<code class="sig-prename descclassname">error_analysis.</code><code class="sig-name descname">get_error</code><span class="sig-paren">(</span><em class="sig-param">Y_pred</em>, <em class="sig-param">Y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#error_analysis.get_error" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">error_analysis.</code><code class="sig-name descname">get_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Y_pred</span></em>, <em class="sig-param"><span class="n">Y_test</span></em><span class="sig-paren">)</span><a class="headerlink" href="#error_analysis.get_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is get the mean absolute error between the predicted label
 and the actual label</p>
 <dl class="field-list simple">
@@ -294,9 +295,9 @@ and the actual label</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-plot_results"></span><dl class="function">
+<span class="target" id="module-plot_results"></span><dl class="py function">
 <dt id="plot_results.plot">
-<code class="sig-prename descclassname">plot_results.</code><code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">Y</em>, <em class="sig-param">Y_predicted</em>, <em class="sig-param">Y_baseline</em>, <em class="sig-param">X_label</em>, <em class="sig-param">Y_label</em>, <em class="sig-param">title</em><span class="sig-paren">)</span><a class="headerlink" href="#plot_results.plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">plot_results.</code><code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">Y_predicted</span></em>, <em class="sig-param"><span class="n">Y_baseline</span></em>, <em class="sig-param"><span class="n">X_label</span></em>, <em class="sig-param"><span class="n">Y_label</span></em>, <em class="sig-param"><span class="n">title</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plot_results.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function plots the graph, given the data values</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

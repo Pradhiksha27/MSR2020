@@ -91,11 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="queries.html">Queries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Documentation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Results</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#error-by-baseline-348-8-349-days">Error by Baseline: 348.8 (~349 days)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#error-by-our-model-288-7-289-days">Error by our model: 288.7 (~289 days)</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
@@ -165,11 +161,10 @@
   <div class="section" id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
 <p>Regression is a statistical method to determine the relationship of one variable dependent on others. For our project, We take the average lifespan of a repository as our baseline. Using this baseline, We have evaluated the model using the MAE metric. Our model has performed better than the baseline as shown below.</p>
-<div class="section" id="error-by-baseline-348-8-349-days">
-<h2>Error by Baseline: 348.8 (~349 days)<a class="headerlink" href="#error-by-baseline-348-8-349-days" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">by</span> <span class="n">Baseline</span> <span class="p">:</span> <span class="mf">348.8</span> <span class="p">(</span><span class="o">~</span><span class="mi">349</span> <span class="n">days</span><span class="p">)</span>
+<span class="n">Error</span> <span class="n">by</span> <span class="n">Model</span> <span class="p">:</span> <span class="mf">288.7</span> <span class="n">days</span> <span class="p">(</span><span class="o">~</span><span class="mi">289</span> <span class="n">days</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="error-by-our-model-288-7-289-days">
-<h2>Error by our model: 288.7 (~289 days)<a class="headerlink" href="#error-by-our-model-288-7-289-days" title="Permalink to this headline">¶</a></h2>
 <p>We have plotted graphs comparing the lifespan to the various features such as total number of snapshot counts, number of targets, original date, number of revisions, number of releases and last revision date. Each diagram shows three scatter plots : The actual value obtained from the table, the value predicted by the model and the average lifespan value which is our baseline.</p>
 <p>According to our graphs, We infer that the lifespan feature does heavily depend on the values of the other features as well. Even though the number of snapshots are the same, the lifespan values differ showing that the snapshot count does matter.</p>
 <a class="reference internal image-reference" href="_images/2.png"><img alt="_images/2.png" src="_images/2.png" style="width: 500px;" /></a>
@@ -178,7 +173,6 @@
 <a class="reference internal image-reference" href="_images/5.png"><img alt="_images/5.png" src="_images/5.png" style="width: 500px;" /></a>
 <a class="reference internal image-reference" href="_images/6.png"><img alt="_images/6.png" src="_images/6.png" style="width: 500px;" /></a>
 <a class="reference internal image-reference" href="_images/7.png"><img alt="_images/7.png" src="_images/7.png" style="width: 500px;" /></a>
-</div>
 </div>
 
 

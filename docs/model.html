@@ -26,11 +26,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -97,6 +97,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
             
@@ -178,7 +179,7 @@
 <div class="section" id="evaluation">
 <h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
 <p>Since we are attempting to perform regression which outputs continuous value within a given range. Our main goal is to minimize the error which is defined by the Loss Function.</p>
-<p>We have used Mean Absolute Error (MAE) as a metric to evaluate the results of the prediction. MAE is the sum of absolute distances between our target variable and predicted values.</p>
+<p>We have chosen average lifespan as our baseline. We compare our other features with this baseline by plotting graphs and using Mean Absolute Error (MAE) as a metric to evaluate the results of the prediction. MAE is the sum of absolute distances between our target variable and predicted values.</p>
 <p>Mathematically, it can be expressed as follows:</p>
 <div class="math notranslate nohighlight">
 \[\frac{ \sum_{i=1}^{N}|y_i - x_i| }{N}\]</div>

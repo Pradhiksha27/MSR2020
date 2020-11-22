@@ -3,10 +3,10 @@ Results
 
 Regression is a statistical method to determine the relationship of one variable dependent on others. For our project, We take the average lifespan of a repository as our baseline. Using this baseline, We have evaluated the model using the MAE metric. Our model has performed better than the baseline as shown below.
 
-Error by Baseline: 348.8 (~349 days)
-------------------------------------
-Error by our model: 288.7 (~289 days) 
--------------------------------------
+.. code-block::
+
+    Error by Baseline : 348.8 (~349 days)
+    Error by Model : 288.7 days (~289 days)
 
 We have plotted graphs comparing the lifespan to the various features such as total number of snapshot counts, number of targets, original date, number of revisions, number of releases and last revision date. Each diagram shows three scatter plots : The actual value obtained from the table, the value predicted by the model and the average lifespan value which is our baseline. 
 
